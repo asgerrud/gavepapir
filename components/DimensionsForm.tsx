@@ -13,8 +13,6 @@ const DimensionsForm = ({ onSubmit }: DimensionsFormProps) => {
   const [width, setWidth] = useState<string>("");
   const [height, setHeight] = useState<string>("");
 
-  const overlap: number = 2; // cm
-
   useEffect(() => {
     onSubmit({
       length: Number(length),

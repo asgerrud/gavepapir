@@ -23,8 +23,6 @@ const WrappingResultMessage = ({ dimensions }: { dimensions: Dimensions }) => {
   const wrappingPaperLength = 2 * width + 2 * height + overlap;
   const wrappingPaperWidth = length + height + 2 * overlap;
 
-  console.log(dimensions);
-
   if (!hasValidDimensions) {
     return <p className="text-red-500">Please fill all dimensions</p>;
   }
