@@ -1,5 +1,7 @@
+import { Centimeter } from "@/types/Centimeter";
+
 export interface Dimensions {
-  length: number;
-  width: number;
-  height: number;
+  length: Centimeter;
+  width: Centimeter;
+  height: Centimeter;
 }

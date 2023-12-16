@@ -12,7 +12,9 @@ const Input = ({ label, value, onChange }: InputProps) => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
 
-    if (value !== "" && Number(value) <= 0) {
+    const hasValue = value !== "";
+
+    if (hasValue && Number(value) <= 0) {
       setErrorMessage("Please enter a value greater than 0");
     } else {
       setErrorMessage(null);
@@ -23,7 +25,7 @@ const Input = ({ label, value, onChange }: InputProps) => {
 
   return (
     <div className="flex flex-col">
-      <label htmlFor={label} className="mb-2">
+      <label htmlFor={label} className="mb-1 font-semibold">
         {label}
       </label>
       <input

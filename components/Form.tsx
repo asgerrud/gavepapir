@@ -8,7 +8,7 @@ interface DimensionsFormProps {
   onSubmit: (dimensions: Dimensions) => void;
 }
 
-const DimensionsForm = ({ onSubmit }: DimensionsFormProps) => {
+const Form = ({ onSubmit }: DimensionsFormProps) => {
   const [length, setLength] = useState<string>("");
   const [width, setWidth] = useState<string>("");
   const [height, setHeight] = useState<string>("");
@@ -22,7 +22,7 @@ const DimensionsForm = ({ onSubmit }: DimensionsFormProps) => {
   }, [length, width, height]);
 
   return (
-    <div className="flex flex-col space-y-3">
+    <div className="flex flex-col space-y-4">
       <Input label="Length (cm)" value={length} onChange={setLength} />
       <Input label="Width (cm)" value={width} onChange={setWidth} />
       <Input label="Height (cm)" value={height} onChange={setHeight} />
@@ -30,4 +30,4 @@ const DimensionsForm = ({ onSubmit }: DimensionsFormProps) => {
   );
 };
 
-export default DimensionsForm;
+export default Form;
