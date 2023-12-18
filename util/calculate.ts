@@ -10,8 +10,11 @@ export const getWrappingPaperNeeded = (dimension: Dimensions): [length: Centimet
 
   const OVERLAP: Centimeter = 2;
 
-  const wrappingPaperLength: Centimeter = 2 * width + 2 * height + OVERLAP;
-  const wrappingPaperWidth: Centimeter = length + height + 2 * OVERLAP;
+  // Sort the dimensions to ensure length >= width >= height
+  const [x, y, z] = [length, width, height].sort((a, b) => b - a);
+
+  const wrappingPaperLength: Centimeter = 2 * y + 2 * z + OVERLAP;
+  const wrappingPaperWidth: Centimeter = x + z + 2 * OVERLAP;
 
   return [wrappingPaperLength, wrappingPaperWidth];
 };

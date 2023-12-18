@@ -9,9 +9,9 @@ interface DimensionsFormProps {
 }
 
 const Form = ({ onSubmit }: DimensionsFormProps) => {
-  const [length, setLength] = useState<string>("");
-  const [width, setWidth] = useState<string>("");
-  const [height, setHeight] = useState<string>("");
+  const [length, setLength] = useState<string>("10");
+  const [width, setWidth] = useState<string>("10");
+  const [height, setHeight] = useState<string>("10");
 
   useEffect(() => {
     onSubmit({
