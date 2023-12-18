@@ -1,6 +1,6 @@
 import React from "react";
 import { Dimensions } from "@/types/Dimensions";
-import { getWrappingPaperNeeded } from "@/util/calculation";
+import { getWrappingPaperNeeded } from "@/util/calculate";
 
 interface WrappingResultProps {
   dimensions: Dimensions;

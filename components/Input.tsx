@@ -1,4 +1,4 @@
-import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
+import { ChangeEvent, Dispatch, FocusEvent, SetStateAction, useState } from "react";
 
 interface InputProps {
   label: string;
@@ -8,6 +8,8 @@ interface InputProps {
 
 const Input = ({ label, value, onChange }: InputProps) => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const handleFocus = (event: FocusEvent<HTMLInputElement>) => event.target.select();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -34,6 +36,7 @@ const Input = ({ label, value, onChange }: InputProps) => {
         className="py-2 px-4 bg-gray-200 rounded-sm"
         min={1}
         value={value}
+        onFocus={handleFocus}
         onChange={handleChange}
       />
       {errorMessage && <p className="text-red-500 text-sm">{errorMessage}</p>}
