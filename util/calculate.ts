@@ -1,5 +1,6 @@
 import { Dimensions } from "@/types/Dimensions";
 import { Centimeter } from "@/types/Centimeter";
+import { OVERLAP } from "@/types/constants";
 
 export const getWrappingPaperNeeded = (dimension: Dimensions): [length: Centimeter, width: Centimeter] => {
   const { width, height, length } = dimension;
@@ -7,8 +8,6 @@ export const getWrappingPaperNeeded = (dimension: Dimensions): [length: Centimet
   if (!width || !height || !length) {
     return [null, null];
   }
-
-  const OVERLAP: Centimeter = 2;
 
   // Sort the dimensions to ensure length >= width >= height
   const [x, y, z] = [length, width, height].sort((a, b) => b - a);
