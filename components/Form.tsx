@@ -5,13 +5,14 @@ import Input from "@/components/Input";
 import { Dimensions } from "@/types/Dimensions";
 
 interface DimensionsFormProps {
+  initialValues: Dimensions;
   onSubmit: (dimensions: Dimensions) => void;
 }
 
-const Form = ({ onSubmit }: DimensionsFormProps) => {
-  const [length, setLength] = useState<string>("10");
-  const [width, setWidth] = useState<string>("10");
-  const [height, setHeight] = useState<string>("10");
+const Form = ({ initialValues, onSubmit }: DimensionsFormProps) => {
+  const [length, setLength] = useState<string>(`${initialValues.length}`);
+  const [width, setWidth] = useState<string>(`${initialValues.width}`);
+  const [height, setHeight] = useState<string>(`${initialValues.height}`);
 
   useEffect(() => {
     onSubmit({
@@ -22,7 +23,7 @@ const Form = ({ onSubmit }: DimensionsFormProps) => {
   }, [length, width, height]);
 
   return (
-    <div className="flex flex-col space-y-4">
+    <div className="flex flex-col space-y-4 pb-10">
       <Input label="Length (cm)" value={length} onChange={setLength} />
       <Input label="Width (cm)" value={width} onChange={setWidth} />
       <Input label="Height (cm)" value={height} onChange={setHeight} />

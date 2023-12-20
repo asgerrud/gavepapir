@@ -5,13 +5,11 @@ import Result from "@/components/Result";
 import React, { useState } from "react";
 import { Dimensions } from "@/types/Dimensions";
 import GiftScene from "@/components/GiftScene";
+import Header from "@/components/Header";
+import { DEFAULT_DIMENSIONS } from "@/types/constants";
 
 const MainCard = () => {
-  const [dimensions, setDimensions] = useState<Dimensions>({
-    length: 10,
-    width: 10,
-    height: 10
-  } as Dimensions);
+  const [dimensions, setDimensions] = useState<Dimensions>(DEFAULT_DIMENSIONS);
 
   return (
     <div className="container max-w-[800px]">
@@ -25,6 +23,9 @@ const MainCard = () => {
           <h2 className="font-bold text-xl mb-3">You will need</h2>
           <Result dimensions={dimensions} />
         </div>
+        <GiftScene dimensions={dimensions} />
+        <Form initialValues={DEFAULT_DIMENSIONS} onSubmit={(dimensions: Dimensions) => setDimensions(dimensions)} />
+        <Result dimensions={dimensions} />
       </div>
     </div>
   );
