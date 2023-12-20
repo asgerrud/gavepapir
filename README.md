@@ -1,6 +1,6 @@
 # Gavepapir 🎁
 
-A website that calculates the amount of paper you need to wrap your gift
+A website that calculates the amount of paper you need to wrap your rectangular gifts
 
 ### Live version
 
