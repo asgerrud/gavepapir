@@ -7,4 +7,10 @@ export const DEFAULT_DIMENSIONS: Dimensions = {
   height: 0
 };
 
+export const PLACEHOLDER_DIMENSIONS: Dimensions = {
+  length: 12,
+  width: 15,
+  height: 8
+};
+
 export const OVERLAP: Centimeter = 2;
