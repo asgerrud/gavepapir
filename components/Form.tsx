@@ -6,16 +6,16 @@ import { Dimensions } from "@/types/Dimensions";
 
 interface DimensionsFormProps {
   initialValues: Dimensions;
-  onSubmit: (dimensions: Dimensions) => void;
+  onChange: (dimensions: Dimensions) => void;
 }
 
-const Form = ({ initialValues, onSubmit }: DimensionsFormProps) => {
+const Form = ({ initialValues, onChange }: DimensionsFormProps) => {
   const [length, setLength] = useState<string>(`${initialValues.length}`);
   const [width, setWidth] = useState<string>(`${initialValues.width}`);
   const [height, setHeight] = useState<string>(`${initialValues.height}`);
 
   useEffect(() => {
-    onSubmit({
+    onChange({
       length: Number(length),
       width: Number(width),
       height: Number(height)

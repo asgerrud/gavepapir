@@ -16,7 +16,7 @@ const MainCard = () => {
       <div className="px-6 pt-8 pb-10 lg:px-16 lg:p-16 lg:pb-18 lg:pt-12 h-full bg-white shadow-md rounded-lg">
         <Header />
         <GiftScene dimensions={dimensions} />
-        <Form initialValues={DEFAULT_DIMENSIONS} onSubmit={(dimensions: Dimensions) => setDimensions(dimensions)} />
+        <Form initialValues={DEFAULT_DIMENSIONS} onChange={(dimensions: Dimensions) => setDimensions(dimensions)} />
         <Result dimensions={dimensions} />
       </div>
     </div>
