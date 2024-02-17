@@ -10,7 +10,7 @@ const GiftScene = ({ dimensions }: { dimensions: Dimensions }) => {
 
   return (
     <div className="h-[225px] lg:h-[300px]">
-      <Canvas>
+      <Canvas className="!pointer-events-none md:!pointer-events-auto">
         <ambientLight />
         <directionalLight intensity={4} position={[4, 8, 2]} />
         <OrbitControls enableDamping={false} />
